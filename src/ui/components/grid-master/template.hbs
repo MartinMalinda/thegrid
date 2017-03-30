@@ -1,3 +1,7 @@
-<div>
-  <h1>Welcome to Glimmer!</h1>
-</div>
+<main>
+  {{#each grid key="@index" as |gridRow|}}
+    {{#each gridRow key="@index" as |gridItem|}}
+      GridItem
+    {{/each}}
+  {{/each}}
+</main>
