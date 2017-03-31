@@ -1,0 +1,8 @@
+<div 
+     style="width:{{@model.width}}px;height:{{@model.height}}px;transform: translateX({{@model.posX}}px) translateY({{@model.posY}}px)"
+     class={{className}}
+     onmousedown={{action startDragging}}
+     onmouseup={{action stopDragging}}
+     onmouseleave={{action stopDragging}}
+     onmousemove={{action moveTile}}>
+</div>

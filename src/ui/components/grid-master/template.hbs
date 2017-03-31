@@ -1,7 +1,17 @@
-<main>
-  {{#each grid key="@index" as |gridRow|}}
-    {{#each gridRow key="@index" as |gridItem|}}
-      GridItem
+<main class="ui container">
+  <div class="ui segment">
+    <div class="ui form">
+      <input type="number" min="0" value={{colsLength}} oninput={{action updateColsLength target="targe.value"}}>
+      <input type="number" min="0" value={{rowsLength}} oninput={{action updateRowsLength target="targe.value"}}>
+    </div>
+  </div>
+  <div class="ui segment">
+    {{colsLength}} x {{rowsLength}}
+    <div class="ui divider"></div>
+    {{#each grid key="@index" as |gridRow|}}
+      {{#each gridRow key="x" as |gridItem|}}
+        <grid-item @onChange={{action updateGridItem gridItem}} @grid={{grid}} @model={{gridItem}} />
+      {{/each}}
     {{/each}}
-  {{/each}}
+  </div>
 </main>
